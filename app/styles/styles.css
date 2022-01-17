@@ -1,0 +1,18 @@
+table {
+    width: 500px;   
+}
+
+th {
+    text-align: left;
+    background-color: #efefef;
+}
+
+
+list-directive table {
+    width: 500px;   
+}
+
+list-directive th {
+    text-align: left;
+    background-color: #efefef;
+}

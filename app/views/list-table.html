@@ -1,0 +1,7 @@
+<tr ng-repeat="person in list | filter:customerFilter | orderBy:'-name'">
+    <td><a href="#/{{person.id}}">{{person.name}}</a></td>
+    <td>{{ person.username }}</td>
+    <td>{{ person.email }}</td>
+</tr>
+
+

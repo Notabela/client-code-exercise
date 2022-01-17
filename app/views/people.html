@@ -1,0 +1,33 @@
+<person-address address="people.address"></person-address>
+<h2>People!</h2>
+Filter: <input type="text" ng-model="customerFilter.name" />
+<br>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr row-directive ng-repeat="person in people | filter:customerFilter | orderBy:'-name'">
+        </tr>
+    </tbody>
+</table>
+<span> Total Customers: {{people.length}}</span>
+
+<!-- <table>
+    <thead>
+        <tr>
+            <th>Testing</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <person-address></person-address>
+        </tr>
+    </tbody>
+</table> -->
