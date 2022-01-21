@@ -14,6 +14,9 @@ Filter: <input type="text" ng-model="customerFilter.name" />
     </thead>
     <tbody>
         <tr row-directive ng-repeat="person in people | filter:customerFilter | orderBy:'-name'">
+            <td>{{ person.name }}</td>
+            <td>{{ person.username }}</td>
+            <td>{{ person.email }}</td>
         </tr>
     </tbody>
 </table>

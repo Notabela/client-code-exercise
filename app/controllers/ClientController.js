@@ -1,26 +1,29 @@
 import * as angular from 'angular';
+import peopleService from '../services/peopleService.js';
 
-(function() {
-    var ClientController = function ($scope, peopleService) {
-        $scope.sortBy = 'name';
-        $scope.reverse = false;
-        $scope.people = [];
+var ClientController = function ($scope) {
+    $scope.sortBy = 'name';
+    $scope.reverse = false;
+    $scope.people = [];
 
-        function init() {
-            peopleService.getPeople()
-                .success(function(people) {
+    let pS = new peopleService();
+    function init() {
+        pS.getPeople().then(res => res.json())
+            .then(function (people) {
+                $scope.$apply(function () {
                     $scope.people = people;
-                })
-                .error(function(status) {
-                    console.log("Error:" + status);
+                    console.log(people);
                 });
-        }
-        init();
-    };
 
-    // Solves script minification process
-    ClientController.$inject = ['$scope', 'peopleService'];
+            })
+            .catch(function (status) {
+                console.log("Error:" + status);
+            });
+    }
+    init();
+};
 
-    angular.module('client-code-App', [])
-        .controller("ClientController", ClientController);
-}());
+// Solves script minification process
+ClientController.$inject = ['$scope']
+
+export default ClientController;

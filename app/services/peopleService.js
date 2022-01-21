@@ -1,13 +1,8 @@
-(function() {
-    var peopleService = function($http) {
+var peopleService = function () {
 
-        this.getPeople = function() {
-            return $http.get("http://jsonplaceholder.typicode.com/users");
-        };
-    }
-    peopleService.$inject = ['$http'];
+    this.getPeople = function () {
+        return fetch("http://jsonplaceholder.typicode.com/users");
+    };
+}
 
-    angular.module('client-code-App', []).service('peopleService', peopleService);
-
-
-}());
+export default peopleService;

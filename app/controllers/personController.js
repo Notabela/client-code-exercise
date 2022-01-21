@@ -1,6 +1,6 @@
 import * as angular from 'angular';
 
-(function() {
+(function () {
     var personController = function ($scope, $routeParams) {
 
         var personId = $routeParams.personId;
@@ -9,16 +9,16 @@ import * as angular from 'angular';
         $scope.customers = [];
 
         function init() {
-            
+
         }
 
         init();
-        
+
     };
 
     // Solves script minification process
     personController.$inject = ['$scope', '$routeParams'];
 
-    angular.module('client-code-App', [])
+    angular.module('client-code-App')
         .controller("personController", personController);
 }());
