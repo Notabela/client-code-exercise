@@ -1,3 +1,5 @@
+import * as angular from 'angular';
+
 (function() {
     var ClientController = function ($scope, peopleService) {
         $scope.sortBy = 'name';
@@ -14,11 +16,11 @@
                 });
         }
         init();
-    }
+    };
 
     // Solves script minification process
     ClientController.$inject = ['$scope', 'peopleService'];
 
-    angular.module('client-code-App')
+    angular.module('client-code-App', [])
         .controller("ClientController", ClientController);
 }());

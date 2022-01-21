@@ -7,7 +7,7 @@
     }
     peopleService.$inject = ['$http'];
 
-    angular.module('client-code-App').service('peopleService', peopleService);
+    angular.module('client-code-App', []).service('peopleService', peopleService);
 
 
 }());

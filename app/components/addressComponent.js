@@ -1,5 +1,5 @@
 (function() {
-    angular.module('client-code-App')
+    angular.module('client-code-App', [])
         .component('personAddress', {
                 controller: 'ClientController',
                 templateUrl: "app/views/address.html",

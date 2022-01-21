@@ -1,5 +1,5 @@
 (function() {
-    angular.module('client-code-App')
+    angular.module('client-code-App', [])
         .directive('rowDirective', function() {
             return {
                 // scope: {
